@@ -26,7 +26,7 @@ export function UpdateTodo({ id, handleClose, handleUpdate}) {
       console.log({ id }, { data });
 
       axios
-          .put(`https://pawtodoapp.heroku.com/api/todo/${id}`, data)
+          .put(`https://pawtodoserver.herokuapp.com/api/todo/${id}`, data)
           .then((res) => {
               setData({ title: "", description: "" });
               console.log(res.data.message);

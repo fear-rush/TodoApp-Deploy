@@ -46,7 +46,7 @@ export function ShowTodo() {
   useEffect(
     function() {
       axios
-        .get("https://pawtodoapp.heroku.com/api/todo")
+        .get("https://pawtodoserver.herokuapp.com/api/todo")
         .then((res) => {
           console.log(res.data);
           setTodo(res.data);

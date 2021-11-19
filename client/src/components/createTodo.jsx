@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import axios from 'axios';
-// import Form from '../view/Form';
 
 export function CreateTodo() {
   const [data, setData] = useState({ title: "", description: "" });
@@ -13,7 +12,7 @@ export function CreateTodo() {
       // e.preventDefault();
 
       axios
-          .post("https://pawtodoapp.heroku.com/api/todo", data)
+          .post("https://pawtodoserver.herokuapp.com/api/todo", data)
           .then((res) => {
               setData({ title: "", description: "" });
               console.log(res.data.message);

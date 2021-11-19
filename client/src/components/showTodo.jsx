@@ -69,7 +69,7 @@ export function ShowTodo() {
   }
 
   function handleDelete(e) {
-    axios.delete(`https://pawtodoapp.heroku.com/api/todo/${e.target.name}`);
+    axios.delete(`https://pawtodoserver.herokuapp.com/api/todo/${e.target.name}`);
 
     setTodo((data) => {
         return data.filter((todo) => todo.id !== e.target.name);

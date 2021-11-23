@@ -46,7 +46,7 @@ export function ShowTodo() {
   useEffect(
     function() {
       axios
-        .get("https://pawtodoserver.herokuapp.com/api/todo")
+        .get(`https://pawtodoserver.herokuapp.com/api/todo`)
         .then((res) => {
           console.log(res.data);
           setTodo(res.data);
@@ -54,7 +54,7 @@ export function ShowTodo() {
         .catch((err) => {
           console.log(err.message);
         });
-    }, [update]
+    }
   );
 
   function handleEdit(e) {

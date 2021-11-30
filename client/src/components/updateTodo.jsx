@@ -26,7 +26,7 @@ export function UpdateTodo({ id, handleClose, handleUpdate}) {
       console.log({ id }, { data });
 
       axios
-          .put(`http://localhost:8000/todo/${id}`, data)
+          .put(`https://pawtodoapp.netlify.app/todo/${id}`, data)
           .then((res) => {
               setData({ title: "", description: "" });
               console.log(res.data.message);

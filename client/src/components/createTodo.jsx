@@ -13,7 +13,7 @@ export function CreateTodo(props) {
       e.preventDefault();
 
       axios
-          .post(`https://pawtodoserver.herokuapp.com/api/todo`, data)
+          .post(`http://localhost:8000/api/todo`, data)
           .then((res) => {
               setData({ title: "", description: "" });
               console.log(res.data.message);
@@ -27,7 +27,7 @@ export function CreateTodo(props) {
 
   return (
     //<div className='flex items-center justify-center overflow-hidden'>
-    <div className='flex items-center justify-center overflow-hidden shadow rounded-md bg-white p-px  fixed w-auto h-auto z-20  top-20vh left-calc'>
+    <div className='flex items-center justify-center overflow-hidden shadow rounded-md bg-white p-px fixed w-auto h-auto z-20 top-80 left-1/2 transform -translate-x-1/2'>
       <div>
         <p className='absolute top-4 right-4 text-3xl mb-16 text-red-500 cursor-pointer' onClick={props.onCancel}>
                   &times;</p>

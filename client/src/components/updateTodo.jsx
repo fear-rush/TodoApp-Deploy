@@ -26,7 +26,7 @@ export function UpdateTodo({ id, handleClose, handleUpdate}) {
       console.log({ id }, { data });
 
       axios
-          .put(`https://pawtodoserver.herokuapp.com/api/todo/${id}`, data)
+          .put(`http://localhost:8000/todo/${id}`, data)
           .then((res) => {
               setData({ title: "", description: "" });
               console.log(res.data.message);
@@ -40,7 +40,7 @@ export function UpdateTodo({ id, handleClose, handleUpdate}) {
 
 
   return (
-    <div className='flex items-center justify-center overflow-hidden z-20'>
+    <div className='fflex items-center justify-center overflow-hidden shadow rounded-md bg-white p-px fixed w-auto h-auto z-20 top-80 left-1/2 transform -translate-x-1/2'>
     <form className='flex flex-col bg-white rounded-md shadow-md p-14 mt-8' 
       onSubmit={(e) => {
         handleSubmit(e);

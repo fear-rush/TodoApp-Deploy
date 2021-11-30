@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { UpdateTodo } from "./updateTodo";
+import Backdrop from "./backdrops";
 // import Card from "../view/Card";
 
 // function TodoCard({data, handleEdit, handleDelete}) {
@@ -98,7 +99,8 @@ export function ShowTodo() {
           </ul>
         </div>
         {open ? (
-          <div className='absolute top-0 left-0 h-screen w-screen flex justify-center items-center bg-black bg-opacity-40'>
+          <div>
+          <div className='absolute top-20vh left-calc z-20 h-auto w-auto flex justify-center items-center'>
             <div className='relative'>
               <p className='absolute top-16 right-4 text-3xl mb-16 text-red-500 cursor-pointer' onClick={handleClose}>
                   &times;
@@ -107,13 +109,13 @@ export function ShowTodo() {
                 id={id}
                 handleClose={handleClose}
                 handleUpdate={handleUpdate}        
-      
               />
 
             </div>
 
           </div>
-
+          <Backdrop onCancel={handleClose}/>
+          </div>
         ): ("")}
       </div>     
   )

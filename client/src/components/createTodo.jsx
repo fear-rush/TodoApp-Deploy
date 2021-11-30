@@ -13,7 +13,7 @@ export function CreateTodo(props) {
       e.preventDefault();
 
       axios
-          .post(`https://pawtodoapp.netlify.app/api/todo`, data)
+          .post(`https://pawtodoserver.herokuapp.com/api/todo`, data)
           .then((res) => {
               setData({ title: "", description: "" });
               console.log(res.data.message);

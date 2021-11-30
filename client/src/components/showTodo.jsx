@@ -47,7 +47,7 @@ export function ShowTodo() {
   useEffect(
     function() {
       axios
-        .get(`https://pawtodoapp.netlify.app/api/todo`)
+        .get(`https://pawtodoserver.herokuapp.com/api/todo`)
         .then((res) => {
           console.log(res.data);
           setTodo(res.data);
@@ -70,7 +70,7 @@ export function ShowTodo() {
   }
 
   function handleDelete(e) {
-    axios.delete(`https://pawtodoapp.netlify.app/api/todo/${e.target.name}`);
+    axios.delete(`https://pawtodoserver.herokuapp.com/api/todo/${e.target.name}`);
 
     setTodo((data) => {
         return data.filter((todo) => todo.id !== e.target.name);
